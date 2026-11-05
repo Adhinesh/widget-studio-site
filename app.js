@@ -191,18 +191,67 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Support Form Submission
-  supportForm.addEventListener("submit", (e) => {
+  // Support Form Submission via FormSubmit (delivers directly to adhinesh73@gmail.com)
+  const submitBtn = document.getElementById("submit-btn");
+
+  supportForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const msg = document.getElementById("support-message").value.trim();
-    if (!msg) return;
 
-    formStatus.style.color = "#00875a";
-    formStatus.textContent = "Thank you! Your message has been received. We will resolve and get back to you.";
-    supportForm.reset();
+    const emailInput = document.getElementById("support-email");
+    const messageInput = document.getElementById("support-message");
 
-    setTimeout(() => {
-      formStatus.textContent = "";
-    }, 6000);
+    const email = emailInput.value.trim();
+    const msg = messageInput.value.trim();
+
+    if (!email || !msg) {
+      formStatus.style.color = "#d93025";
+      formStatus.textContent = "Please provide both your email address and message.";
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    formStatus.style.color = "#555555";
+    formStatus.textContent = "Sending your query...";
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/adhinesh73@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `New Customer Support Query from ${email} - Widget Project`,
+          email: email,
+          message: msg,
+          _replyto: email
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok && (result.success === "true" || result.success === true || result.message)) {
+        formStatus.style.color = "#00875a";
+        formStatus.textContent = "Message sent successfully! We will review and reply to your email shortly.";
+        supportForm.reset();
+      } else {
+        // Fallback to mailto link if API fails or blocks
+        window.location.href = `mailto:adhinesh73@gmail.com?subject=${encodeURIComponent("Customer Support Query - Widget Project")}&body=${encodeURIComponent(msg + "\n\nFrom: " + email)}`;
+        formStatus.style.color = "#00875a";
+        formStatus.textContent = "Opening your email client to complete sending...";
+      }
+    } catch (err) {
+      // In case of network error, seamlessly provide mailto fallback
+      window.location.href = `mailto:adhinesh73@gmail.com?subject=${encodeURIComponent("Customer Support Query - Widget Project")}&body=${encodeURIComponent(msg + "\n\nFrom: " + email)}`;
+      formStatus.style.color = "#00875a";
+      formStatus.textContent = "Opening your email client to send...";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send Message";
+      setTimeout(() => {
+        formStatus.textContent = "";
+      }, 7000);
+    }
   });
 });
