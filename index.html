@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WIDGET PROJECT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- VIEW 1: LANDING PAGE -->
+  <main id="home-view" class="view active">
+    <div class="landing-container">
+      <header class="top-nav">
+        <h1 class="brand-title">WIDGET PROJECT</h1>
+      </header>
+
+      <section class="center-art">
+        <div class="art-frame">
+          <img src="public/einstein-portal.png" alt="Einstein at the Imaginative Portal" class="hero-image" />
+        </div>
+      </section>
+
+      <footer class="bottom-links">
+        <button id="open-support-btn" class="nav-btn support-btn" aria-label="Customer Support">
+          CUSTOMER<br>SUPPORT
+        </button>
+        <button id="open-privacy-btn" class="nav-btn privacy-btn" aria-label="Privacy Policy">
+          PRIVACY<br>POLICY
+        </button>
+      </footer>
+    </div>
+  </main>
+
+  <!-- VIEW 2: CUSTOMER SUPPORT -->
+  <section id="support-view" class="view" aria-hidden="true">
+    <div class="support-container">
+      <!-- Back button to return to home -->
+      <button class="back-btn" id="support-back-btn" aria-label="Back to home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back</span>
+      </button>
+
+      <h2 class="view-title serif-title">CUSTOMER SUPPORT</h2>
+
+      <!-- 8-Card Support Grid -->
+      <div class="support-grid">
+        <!-- 1. Getting Started -->
+        <article class="support-card" data-category="getting-started" tabindex="0">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+              <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+              <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+              <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+            </svg>
+          </div>
+          <h3 class="card-title">Getting Started</h3>
+          <p class="card-sub">Browse help articles</p>
+        </article>
+
+        <!-- 2. Weather Widgets -->
+        <article class="support-card" data-category="weather-widgets" tabindex="0">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="9" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M4.93 4.93l1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M15.5 14h.5a4 4 0 0 0 0-8 4.5 4.5 0 0 0-3.5 1.7"></path>
+              <path d="M18.5 21a4.5 4.5 0 0 0 0-9H18a5 5 0 0 0-9.9-1A4.5 4.5 0 0 0 4.5 16.5 4.5 4.5 0 0 0 9 21h9.5z"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Weather Widgets</h3>
+          <p class="card-sub">Browse help articles</p>
+        </article>
+
+        <!-- 3. Music Widgets -->
+        <article class="support-card" data-category="music-widgets" tabindex="0">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18V5l12-2v13"></path>
+              <circle cx="6" cy="18" r="3"></circle>
+              <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="card-title">Music Widgets</h3>
+          <p class="card-sub">Browse help articles</p>
+        </article>
+
+        <!-- 4. Refresh Issues -->
+        <article class="support-card" data-category="refresh-issues" tabindex="0">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6"></path>
+              <path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Refresh Issues</h3>
+          <p class="card-sub">Browse help articles</p>
+        </article>
+
+        <!-- 5. Expenses & Budget -->
+        <article class="support-card" data-category="expenses-budget" tabindex="0">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+              <path d="M16 3H4a2 2 0 0 0-2 2v2"></path>
+              <circle cx="18" cy="14" r="1"></circle>
+            </svg>
+          </div>
+          <h3 class="card-title">Expenses &amp; Budget</h3>
+          <p class="card-sub">Browse help articles</p>
+        </article>
+
+        <!-- 6. Purchases & Billing -->
+        <article class="support-card" data-category="purchases-billing" tabindex="0">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+            </svg>
+          </div>
+          <h3 class="card-title">Purchases &amp; Billing</h3>
+          <p class="card-sub">Browse help articles</p>
+        </article>
+
+        <!-- 7. Privacy & Security -->
+        <article class="support-card" data-category="privacy-security" tabindex="0">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Privacy &amp; Security</h3>
+          <p class="card-sub">Browse help articles</p>
+        </article>
+
+        <!-- 8. Troubleshooting -->
+        <article class="support-card" data-category="troubleshooting" tabindex="0">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Troubleshooting</h3>
+          <p class="card-sub">Browse help articles</p>
+        </article>
+      </div>
+
+      <!-- Still Need Help Section -->
+      <section class="still-need-help">
+        <h3 class="serif-title sub-title">STILL NEED HELP</h3>
+        <p class="help-desc">Leave a message . we will resolve . and let you know as soon as possible</p>
+
+        <form id="support-form" class="support-form">
+          <div class="textarea-wrapper">
+            <textarea id="support-message" rows="5" placeholder="Type your message" required></textarea>
+          </div>
+          <div class="form-actions">
+            <input type="email" id="support-email" placeholder="Your email (optional)" class="email-input">
+            <button type="submit" class="submit-btn">Send Message</button>
+          </div>
+          <div id="form-status" class="form-status" aria-live="polite"></div>
+        </form>
+      </section>
+    </div>
+  </section>
+
+  <!-- VIEW 3: PRIVACY POLICY -->
+  <section id="privacy-view" class="view" aria-hidden="true">
+    <div class="privacy-container">
+      <button class="back-btn" id="privacy-back-btn" aria-label="Back to home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back</span>
+      </button>
+
+      <h2 class="view-title serif-title">PRIVACY POLICY</h2>
+      <p class="policy-updated">Last Updated: November 2026</p>
+
+      <div class="policy-content">
+        <div class="policy-block">
+          <h3>1. Zero Telemetry &amp; Privacy First</h3>
+          <p>Widget Project is engineered with total privacy at its foundation. We do not track, collect, store, sell, or transmit any personal identifiers, app analytics, or usage statistics to third parties.</p>
+        </div>
+
+        <div class="policy-block">
+          <h3>2. On-Device Computation</h3>
+          <p>All widget data, configuration states, custom formulas, and user-specified inputs are stored strictly on your local device and within your private iCloud container via Apple’s native CloudKit sandbox. We have no access to your data or credentials.</p>
+        </div>
+
+        <div class="policy-block">
+          <h3>3. Weather Data &amp; Apple WeatherKit</h3>
+          <p>Weather data is powered directly through Apple WeatherKit. When location services are granted, your approximate location coordinates are handled directly by Apple's secure infrastructure to fetch local atmospheric conditions. We never store or log your location coordinates on any external server.</p>
+        </div>
+
+        <div class="policy-block">
+          <h3>4. Music &amp; Media Playback</h3>
+          <p>Music widgets access Apple Music playback state locally using Apple MusicKit APIs on your device. No listening history or playlist tokens leave your personal device.</p>
+        </div>
+
+        <div class="policy-block">
+          <h3>5. Inquiries &amp; Customer Support</h3>
+          <p>When you contact us through the Customer Support desk, information provided (such as your message and optional return email address) is used solely to respond to your technical question and resolve issues. It is never shared with third-party marketing services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL FOR CARD HELP ARTICLES -->
+  <div id="article-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-category-badge" id="modal-badge">HELP ARTICLE</span>
+        <h3 id="modal-title" class="serif-title modal-title">Article Title</h3>
+      </div>
+      <div id="modal-body" class="modal-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
